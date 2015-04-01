@@ -1,0 +1,11 @@
+<h1> Hello Jeff pages.home </h1>
+<div ng-app="app">
+  {{ 1 + 1 }}
+	<div ng-controller="pageCtrl" ng-init="fetchData()">
+		<div ng-repeat="superhero in superheros">
+			<h3 ng-click="toggleVisible(superhero)">{{ superhero.name }}</h3>
+			<p ng-if="superhero.name">{{ superhero.name }} </p> 
+
+			</div>
+		</div>
+	</div> 
