@@ -5,7 +5,14 @@
 		<div ng-repeat="superhero in superheros">
 			<h3 ng-click="toggleVisible(superhero)">{{ superhero.name }}</h3>
 			<p ng-if="superhero.name">{{ superhero.name }} </p> 
-
 			</div>
+<div id="form">
+	Name:<input ng-model="newName">
+	<button ng-click="addSuperhero(newName)">
+		Add Person</button> 
+	</div> 
+
+
+
 		</div>
 	</div> 

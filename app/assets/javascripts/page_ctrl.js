@@ -7,6 +7,19 @@
   		});
   	};
 
+
+$scope.addSuperhero = function(newName) {
+  var superhero = 
+  name: newName
+};
+
+$http.post('/api/v1/superheros.json', superhero).then (function(response)) {$scope.people.push(superhero);}
+function (error) {
+
+});
+
+$scope.name = "";
+
  $scope.toggleVisible = function(superhero) { superhero.nameVisible = !superhero.nameVisible;
   	};
   	window.scope = $scope;

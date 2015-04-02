@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  # root 'pages#home'
+  root 'superheros#home'  
 get '/superheros' => 'superheros#index'
 
 namespace :api do
