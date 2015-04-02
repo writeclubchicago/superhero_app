@@ -14,7 +14,10 @@ class Api::V1::SuperherosController < ApplicationController
   def create
     @superhero = Superhero.create(:name => params[:name],
 :ability => params[:ability], :first_name => params[:first_name], :last_name => params[:last_name], :gender => params[:gender], :occupation => params[:occupation], :city => params[:city], :publisher => params[:publisher])
-   render 'show'
-
+    if @superhero.save
+    else 
+      render json: { errors: @superhero.errors.full_messages }, status: 422
+   # render 'show'
+    end
   end
 end

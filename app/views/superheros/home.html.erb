@@ -3,9 +3,32 @@
   {{ 1 + 1 }}
 <div ng-app="app">
 	<div ng-controller="pageCtrl" ng-init="fetchData()">
-		<div ng-repeat="superhero in superheros">
+    <label> Filter by Name </label>
+    <input ng-model="nameFilter"> 
+    <label> Filter by Ability </label>
+    <input ng-model="abilityFilter"> 
+
+
+		<div ng-repeat="superhero in superheros |
+    filter: {name: nameFilter} |
+    filter: {ability: abilityFilter}" 
+    >
 			<h3 ng-click="toggleVisible(superhero)">{{superhero.name}}</h3>
+      <p> {{superhero.ability}}</p> 
 			<p ng-if="superhero.name"
 			</div>
 		</div>
 	</div> 
+
+    <div id="form">
+      <div id="errors">
+        <p ng-repeat="error in errors">{{ error }}</p>
+      </div>
+      Name: <input ng-model="newName">
+<!--       Details: <input ng-model="newPersonDetails"> -->
+      <button ng-click="addSuperhero(newName)">Add Name</button>
+    </div>
+
+  </div>
+</div>
+

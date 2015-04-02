@@ -15,9 +15,10 @@ $scope.addSuperhero = function(newName) {
 
 $http.post('/api/v1/superheros.json', superhero).then (function(response) {
   $scope.superheros.push(superhero);
-  $scope.name = "";
+  // $scope.name = "";
 
 }, function (error) {
+          $scope.errors = error.data.errors;
 });
 }
  $scope.toggleVisible = function(superhero) { superhero.nameVisible = !superhero.nameVisible;
