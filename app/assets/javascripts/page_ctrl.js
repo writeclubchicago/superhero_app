@@ -21,6 +21,14 @@ $http.post('/api/v1/superheros.json', superhero).then (function(response) {
           $scope.errors = error.data.errors;
 });
 }
+
+$scope.descending = true; 
+$scope.changeOrder = function(attribute) {
+  $scope.orderByAttribute = attribute;
+  $scope.descending = !$scope.descending;
+};
+
+
  $scope.toggleVisible = function(superhero) { superhero.nameVisible = !superhero.nameVisible;
   	}
   	window.scope = $scope;

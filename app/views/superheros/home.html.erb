@@ -8,10 +8,14 @@
     <label> Filter by Ability </label>
     <input ng-model="abilityFilter"> 
 
+<button ng-click="changeOrder('name')"> Order by Name 
+</button>
+<button ng-click="changeOrder('details')"> Order by Details </button> 
+
 
 		<div ng-repeat="superhero in superheros |
-    filter: {name: nameFilter} |
-    filter: {ability: abilityFilter}" 
+    filter: {name: nameFilter} | 
+    filter: {ability: abilityFilter} | orderBy: orderByAttribute:descending " 
     >
 			<h3 ng-click="toggleVisible(superhero)">{{superhero.name}}</h3>
       <p> {{superhero.ability}}</p> 
